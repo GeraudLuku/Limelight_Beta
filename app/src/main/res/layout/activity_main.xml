@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.krystofrapp.limelightbeauty.MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/fragment_container"
+        android:layout_above="@id/bottomNavigation">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <RelativeLayout
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@drawable/background"
+                android:padding="5dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@+id/pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true" />
+
+                <com.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/bg_overlay"
+                    android:gravity="bottom"
+                    android:padding="4dp"
+                    app:centered="true"
+                    app:fillColor="@color/colorAccent"
+                    app:pageColor="@color/color_white"
+                    app:snap="false" />
+
+            </RelativeLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/slider_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/banner">
+
+                <TextView
+                    android:id="@+id/txt_top_ordered"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="40dp"
+                    android:fontFamily="@font/gabriola"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="•Top Ordered Items•"
+                    android:textColor="@color/purple"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_top_rated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:background="@color/color_white"
+                    android:fontFamily="@font/gabriola"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="10dp"
+                    android:text="•Top Rated Services•"
+                    android:textColor="@color/purple"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/recycler_view_items2"
+                    app:layout_constraintTop_toBottomOf="@id/recycler_view_items" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_items"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/color_white"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt_top_ordered" />
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view_items2"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/color_white"
+                    android:orientation="horizontal"
+                    android:padding="5dp"
+                    app:layout_constraintTop_toBottomOf="@id/txt_top_rated" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/bottomNavigation"
+        app:menu="@menu/bottom_navigation"
+        android:background="?android:attr/windowBackground"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

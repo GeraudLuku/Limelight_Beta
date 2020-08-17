@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BookAppointment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/banner"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/background"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lobster"
+            android:gravity="center"
+            android:text="Limelight Beauty"
+            android:textColor="@color/strong_magenta"
+            android:textSize="12sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_layout"
+        android:layout_width="match_parent"
+        android:layout_height="540dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/appointment_shadow_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <ProgressBar
+            android:id="@+id/progressbar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@id/const_layout"
+            app:layout_constraintStart_toStartOf="@id/const_layout"
+            app:layout_constraintTop_toTopOf="@id/const_layout" />
+
+        <CalendarView
+            android:id="@+id/calendar"
+            android:layout_width="match_parent"
+            android:layout_height="290dp"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:layout_constraintTop_toBottomOf="@id/textPlace" />
+
+        <TextView
+            android:id="@+id/date_holder"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:background="@color/overlay_purple"
+            android:drawableEnd="@drawable/ic_date"
+            android:focusableInTouchMode="false"
+            android:fontFamily="sans-serif"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:padding="6dp"
+            android:text="18-Jun-2020"
+            android:textColor="@color/black"
+            android:textIsSelectable="true"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/calendar" />
+
+        <TextView
+            android:id="@+id/textPlace"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/gabriola"
+            android:text="Pick Appointment Date"
+            android:textColor="@color/black"
+            android:textSize="23sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="45dp"
+            android:fontFamily="sans-serif-black"
+            android:text="price"
+            android:textColor="@color/strong_magenta"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@id/textPlace"
+            app:layout_constraintEnd_toEndOf="@id/const_layout"
+            app:layout_constraintTop_toTopOf="@id/textPlace" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="165dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintBottom_toBottomOf="@id/const_layout">
+
+            <TextView
+                android:id="@+id/slot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/gabriola"
+                android:text="Available Time Slots"
+                android:textColor="@color/black"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toTopOf="@id/slots_container"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="30dp"
+                android:layout_height="25dp"
+                android:src="@drawable/ic_arrow_forward"
+                app:layout_constraintBottom_toBottomOf="@id/slot"
+                app:layout_constraintEnd_toStartOf="@id/edt_timePlace"
+                app:layout_constraintStart_toEndOf="@id/slot"
+                app:layout_constraintTop_toTopOf="@id/slot" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/slots_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <RelativeLayout
+                    android:id="@+id/slots_layout1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/time_slot1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/overlay_purple"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_time"
+                        android:drawablePadding="5dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="sans-serif"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:padding="4dp"
+                        android:text="12:00"
+                        android:textColor="@color/gray"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/time_slot2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/time_slot1"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/overlay_purple"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_time"
+                        android:drawablePadding="5dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="sans-serif"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:padding="4dp"
+                        android:text="13:00"
+                        android:textColor="@color/gray"
+                        android:textSize="17sp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:id="@+id/slots_layout2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintStart_toEndOf="@id/slots_layout1"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/time_slot3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/overlay_purple"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_time"
+                        android:drawablePadding="5dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="sans-serif"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:padding="4dp"
+                        android:text="14:00"
+                        android:textColor="@color/gray"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/time_slot4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/time_slot3"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/overlay_purple"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_time"
+                        android:drawablePadding="5dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="sans-serif"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:padding="4dp"
+                        android:text="15:00"
+                        android:textColor="@color/gray"
+                        android:textSize="17sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/slots_layout3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintStart_toEndOf="@id/slots_layout2"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:id="@+id/time_slot5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/overlay_purple"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_time"
+                        android:drawablePadding="5dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="sans-serif"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:padding="4dp"
+                        android:text="16:30"
+                        android:textColor="@color/gray"
+                        android:textSize="17sp" />
+
+                    <TextView
+                        android:id="@+id/time_slot6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/time_slot5"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/overlay_purple"
+                        android:clickable="true"
+                        android:drawableEnd="@drawable/ic_time"
+                        android:drawablePadding="5dp"
+                        android:focusable="true"
+                        android:focusableInTouchMode="false"
+                        android:fontFamily="sans-serif"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:padding="4dp"
+                        android:text="17:45"
+                        android:textColor="@color/gray"
+                        android:textSize="17sp" />
+
+                </RelativeLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <EditText
+                android:id="@+id/edt_timePlace"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:layout_marginStart="50dp"
+                android:background="@drawable/btn_release_transition"
+                android:ems="6"
+                android:fontFamily="sans-serif"
+                android:hint="time slot"
+                android:inputType="textPersonName"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:textAlignment="center"
+                android:textColor="@color/color_white"
+                android:textColorHint="@color/colorAccent"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="@id/slot"
+                app:layout_constraintStart_toEndOf="@id/slot"
+                app:layout_constraintTop_toTopOf="@id/slot" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cAppoint"
+        android:layout_width="215dp"
+        android:layout_height="40dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="false"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/strong_magenta"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="4dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="@id/const_layout"
+        app:layout_constraintStart_toStartOf="@id/const_layout"
+        app:layout_constraintTop_toBottomOf="@id/const_layout">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawableEnd="@drawable/ic_check"
+                android:drawablePadding="5dp"
+                android:fontFamily="sans-serif"
+                android:textStyle="bold"
+                android:text="Confirm Date &amp; Time"
+                android:textColor="@color/color_white"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

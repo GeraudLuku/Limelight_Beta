@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PaymentGateway">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/background"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/lobster"
+            android:gravity="center"
+            android:text="Limelight Beauty"
+            android:textColor="@color/strong_magenta"
+            android:textSize="11sp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/const_layout"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/appointment_shadow_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/OM"
+            android:layout_width="80dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="60dp"
+            android:src="@drawable/orange_money"
+            app:layout_constraintBottom_toBottomOf="@id/const_layout"
+            app:layout_constraintStart_toStartOf="@id/const_layout"
+            app:layout_constraintTop_toTopOf="@id/const_layout" />
+
+        <ImageView
+            android:id="@+id/MOMO"
+            android:layout_width="75dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="60dp"
+            android:src="@drawable/momo"
+            app:layout_constraintBottom_toBottomOf="@id/const_layout"
+            app:layout_constraintEnd_toEndOf="@id/const_layout"
+            app:layout_constraintTop_toTopOf="@id/const_layout" />
+
+        <TextView
+            android:id="@+id/time_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="sans-serif-black"
+            android:text="time"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@id/price_tv"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/txt_below"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="sans-serif"
+            android:maxWidth="220dp"
+            android:text="Method of Payment"
+            android:textAlignment="center"
+            android:textColor="@color/gray"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/price_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="45dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="sans-serif-black"
+            android:text="price"
+            android:textColor="@color/strong_magenta"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@id/divider"
+            app:layout_constraintStart_toStartOf="@id/divider"
+            app:layout_constraintTop_toBottomOf="@id/divider" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/gray"
+            app:layout_constraintTop_toBottomOf="@id/txt_below" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_om"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/OM"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toEndOf="@id/OM"
+            app:layout_constraintStart_toStartOf="@id/OM"
+            app:layout_constraintTop_toBottomOf="@id/OM">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/gabriola"
+                    android:text="ORANGE"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/btn_momo"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="5dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="false"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/MOMO"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="3dp"
+            app:layout_constraintEnd_toEndOf="@id/MOMO"
+            app:layout_constraintStart_toStartOf="@id/MOMO"
+            app:layout_constraintTop_toBottomOf="@id/MOMO">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/gabriola"
+                    android:text="MTN"
+                    android:textAlignment="center"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_white"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/ic_copyright"
+            android:contentDescription="copyright"
+            app:layout_constraintBottom_toBottomOf="@id/txt_copyright"
+            app:layout_constraintEnd_toStartOf="@+id/txt_copyright"
+            app:layout_constraintTop_toTopOf="@id/txt_copyright" />
+
+        <TextView
+            android:id="@+id/txt_copyright"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gabriola"
+            android:text="2020 Limelight Technologies Ltd. All Rights Reserved."
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toEndOf="@id/const_layout"
+            app:layout_constraintStart_toStartOf="@id/const_layout"
+            app:layout_constraintTop_toBottomOf="@id/btn_om" />
+
+        <TextView
+            android:id="@+id/trans_id_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:text="You Will Need The •TRANSACTION ID• To Validate Your Payment."
+            android:textColor="@color/brown"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="@id/const_layout"
+            app:layout_constraintStart_toStartOf="@id/const_layout"
+            app:layout_constraintTop_toBottomOf="@id/txt_copyright" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Limelight•Beta</string>
+    <string name="desc">Get An Account With Us!</string>
+    <string name="web_client_id">846171750575-6046sqfpkpresud3utovpcvvo3lhnmtq.apps.googleusercontent.com</string>
+    <string name="title_home">Home</string>
+    <string name="title_services">Services</string>
+    <string name="title_cart">History</string>
+    <string name="title_account">Account</string>
+</resources>

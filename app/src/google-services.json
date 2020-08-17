@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "846171750575",
+    "firebase_url": "https://limelight-beauty.firebaseio.com",
+    "project_id": "limelight-beauty",
+    "storage_bucket": "limelight-beauty.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:846171750575:android:facf2e54e80698e1ec545a",
+        "android_client_info": {
+          "package_name": "com.krystofrapp.limelightbeauty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "846171750575-h4t9fvejutathksg4s140jd6nqc51tbg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.krystofrapp.limelightbeauty",
+            "certificate_hash": "f68c6069b1614cd5e0356a55cccc71075f84ded5"
+          }
+        },
+        {
+          "client_id": "846171750575-6046sqfpkpresud3utovpcvvo3lhnmtq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDcGNxNc7AHEjwfLGaSpX9EEKhbw5jh1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "846171750575-63h89ir89g4nlq39mn3mhvls8lms7asf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
